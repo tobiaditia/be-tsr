@@ -1,6 +1,6 @@
 import mongoose from "mongoose";
 
-const Theory = mongoose.Schema({
+const Exam = mongoose.Schema({
     class_id: {
         type: Number,
         required: true
@@ -13,10 +13,14 @@ const Theory = mongoose.Schema({
         type: String,
         required: true
     },
-    content: {
-        type: String,
+    active: {
+        type: Boolean,
+        required: true
+    },
+    type: {
+        type: Number,
         required: true
     },
 });
 
-export default mongoose.model('Theories', Theory);
+export default mongoose.model('Exams', Exam);
