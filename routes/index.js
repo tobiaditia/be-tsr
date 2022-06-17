@@ -20,6 +20,13 @@ import {
     deleteExam,
     getExam,
 } from "../controllers/exam_controller.js";
+import {
+    getExamQuestionById,
+    saveExamQuestion,
+    updateExamQuestion,
+    deleteExamQuestion,
+    getExamQuestion,
+} from "../controllers/exam_question_controller.js";
 
 const router = express.Router();
 
@@ -36,6 +43,11 @@ router.get('/exams/:id', getExamById);
 router.post('/exams/', saveExam);
 router.patch('/exams/:id', updateExam);
 router.delete('/exams/:id', deleteExam);
+router.get('/exams/:id/questions', getExamQuestion);
+router.get('/exams/:id/questions/:id_question', getExamQuestionById);
+router.post('/exams/:id/questions', saveExamQuestion);
+router.patch('/exams/:id/questions/:id_question', updateExamQuestion);
+router.delete('/exams/:id/questions/:id_question', deleteExamQuestion);
 router.get('/users/', getUser);
 router.get('/users/:id', getUserById);
 router.post('/users/', saveUser);

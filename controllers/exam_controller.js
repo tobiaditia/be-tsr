@@ -14,8 +14,8 @@ export const getExam = async (req, res) => {
 
 export const getExamById = async (req, res) => {
     try {
-        const theory = await Exam.findById(req.params.id);
-        res.json(theory);
+        const exam = await Exam.findById(req.params.id);
+        res.json(exam);
     } catch (error) {
         res.status(404).json({
             message: error.message
@@ -25,9 +25,9 @@ export const getExamById = async (req, res) => {
 }
 
 export const saveExam = async (req, res) => {
-    const theory = new Exam(req.body);
+    const exam = new Exam(req.body);
     try {
-        const savedExam = await theory.save();
+        const savedExam = await exam.save();
         res.status(201).json(savedExam);
     } catch (error) {
         res.status(400).json({

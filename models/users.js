@@ -2,11 +2,11 @@ import mongoose from "mongoose";
 
 const User = mongoose.Schema({
     role_id: {
-        type: Number,
+        type: String,
         required: true
     },
     class_id: {
-        type: Number,
+        type: String,
         required: false
     },
     name: {
